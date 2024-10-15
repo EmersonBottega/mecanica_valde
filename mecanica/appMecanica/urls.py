@@ -2,7 +2,7 @@ from django.urls import path
 from .views import ClienteListCreateView, ClienteDetailView, AutomovelListCreateView, AutomovelDetailView, ServicoListCreateView, ServicoDetailView
 
 urlpatterns = [
-    path('clientes/', ClienteListCreateView.as_view(), name='cliente-list'),
+    path('clientes/', ClienteListCreateView.as_view(), name='cliente-list'),  # Suporte a busca por nome com '?search='
     path('clientes/<int:pk>/', ClienteDetailView.as_view(), name='cliente-detail'),
     
     path('automoveis/', AutomovelListCreateView.as_view(), name='automovel-list'),

@@ -1,11 +1,15 @@
 from rest_framework import generics
 from .models import Cliente, Automovel, Servico
 from .serializers import ClienteSerializer, AutomovelSerializer, ServicoSerializer
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.filters import SearchFilter
 
 # Listar e criar clientes
 class ClienteListCreateView(generics.ListCreateAPIView):
     queryset = Cliente.objects.all()
     serializer_class = ClienteSerializer
+    filter_backends = [SearchFilter]
+    search_fields = ['nome']  # Permite buscar clientes pelo campo nome
 
 # Detalhar, atualizar e deletar clientes
 class ClienteDetailView(generics.RetrieveUpdateDestroyAPIView):
