@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Cliente</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <header>
+        <h1><a href="{% url 'index' %}">Mecânica</a></h1>
+        <form method="GET" action="{% url 'cliente-list' %}" class="search-form">
+            <input type="text" name="search" placeholder="Pesquisar cliente">
+            <button type="submit">Search</button>
+        </form>
+    </header>
+
+    <main>
+        <h2>Cadastrar Cliente</h2>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Salvar Cliente</button>
+        </form>
+        <button onclick="window.location.href='{% url 'automovel-create' %}'">Próximo: Cadastrar Automóvel</button>
+    </main>
+</body>
+
+</html>

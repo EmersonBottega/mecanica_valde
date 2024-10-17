@@ -1,0 +1,32 @@
+* {
+
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+}
+
+header h1 {
+    margin: 0;
+}
+
+header h1 a, header form {
+    color: white;
+    text-decoration: none;
+}
+
+button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
